@@ -132,3 +132,9 @@ h5 {
 h1, h2, h4, h5 {
 	margin: 0;
 }
+
+a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: white;
+}

@@ -1,12 +1,20 @@
 import api from "./api"
 
 export const getCharacters = async () => {
-    const response = await api.get('/character')
+    try {
+        const response = await api.get('/character')
 
-    if (response.status !==200){
+        if (response.status !== 200) {
+            console.error('Falha na requisição:', response.status)
+            return []
+        }
+        
+    
+        return response.data.results
+
+    } catch (error) {
+     
+        console.error('Erro ao buscar personagens:', error)
         return []
     }
-    console.log('response do axios',response)
-    return response.data.results
-
 }
